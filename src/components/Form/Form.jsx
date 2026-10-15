@@ -1,10 +1,9 @@
-import { StyledForm } from "./Form.styled";
+import { StyledForm, Input, Btn } from "./Form.styled";
 import { Component } from "react";
 import { nanoid } from "nanoid";
 
 class Form extends Component {
   state = {
-    //   filter: '',
     name: "",
     number: "",
   };
@@ -39,7 +38,7 @@ class Form extends Component {
     return (
       <StyledForm onSubmit={this.handleSubmit}>
         <label htmlFor="name">Name</label>
-        <input
+        <Input
           value={name}
           onChange={this.handleChange}
           type="text"
@@ -47,14 +46,14 @@ class Form extends Component {
 
         />
         <label htmlFor="number">Number</label>
-        <input
+        <Input
           value={number}
           onChange={this.handleChange}
           type="number"
           name="number"
           
         />
-        <button type="submit">Add contact</button>
+        <Btn type="submit">Add contact</Btn>
       </StyledForm>
     );
   }
