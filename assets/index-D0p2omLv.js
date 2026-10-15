@@ -36,17 +36,59 @@ align-items: center;
 flex-direction: column;
 margin-bottom: 50px;
 gap: 10px;
-`,Zn=`57X6y3wQZNzYjJB2L_10pxbackgroundhimselfUTF-8DEMOGRAPHICSVqvt4KW9`,Qn=(e=21)=>{for(var t=``,n=crypto.getRandomValues(new Uint8Array(e|=0));e--;)t+=Zn[n[e]&63];return t},$n=class extends _.Component{state={name:``,number:``};handleSubmit=e=>{e.preventDefault();let{name:t,number:n}=this.state,r={id:Qn(),name:t,number:n};this.props.onApp(r),this.setState(()=>({name:``,number:``}))};handleChange=e=>{let{name:t,value:n}=e.target;this.setState({[t]:n})};render(){let{name:e,number:t}=this.state;return(0,F.jsxs)(Xn,{onSubmit:this.handleSubmit,children:[(0,F.jsx)(`label`,{htmlFor:`name`,children:`Name`}),(0,F.jsx)(`input`,{value:e,onChange:this.handleChange,type:`text`,name:`name`}),(0,F.jsx)(`label`,{htmlFor:`number`,children:`Number`}),(0,F.jsx)(`input`,{value:t,onChange:this.handleChange,type:`number`,name:`number`}),(0,F.jsx)(`button`,{type:`submit`,children:`Add contact`})]})}},er=Un.h2`
+padding: 30px 30px;
+outline: solid white 1px;
+width: 60%;
+margin: 0 auto;
+`,Zn=Un.input`
+border-radius: 30px;
+border: none;
+padding: 10px;
+`,Qn=Un.button`
+border-radius: 30px;
+border: none;
+padding: 10px;
+background-color: black;
+
+&:hover{
+    background-color: white;
+    color: black;
+    transition: 100ms;
+}
+`,$n=`57X6y3wQZNzYjJB2L_10pxbackgroundhimselfUTF-8DEMOGRAPHICSVqvt4KW9`,er=(e=21)=>{for(var t=``,n=crypto.getRandomValues(new Uint8Array(e|=0));e--;)t+=$n[n[e]&63];return t},tr=class extends _.Component{state={name:``,number:``};handleSubmit=e=>{e.preventDefault();let{name:t,number:n}=this.state,r={id:er(),name:t,number:n};this.props.onApp(r),this.setState(()=>({name:``,number:``}))};handleChange=e=>{let{name:t,value:n}=e.target;this.setState({[t]:n})};render(){let{name:e,number:t}=this.state;return(0,F.jsxs)(Xn,{onSubmit:this.handleSubmit,children:[(0,F.jsx)(`label`,{htmlFor:`name`,children:`Name`}),(0,F.jsx)(Zn,{value:e,onChange:this.handleChange,type:`text`,name:`name`}),(0,F.jsx)(`label`,{htmlFor:`number`,children:`Number`}),(0,F.jsx)(Zn,{value:t,onChange:this.handleChange,type:`number`,name:`number`}),(0,F.jsx)(Qn,{type:`submit`,children:`Add contact`})]})}},nr=Un.h2`
 margin-bottom: 20px;
 font-weight: 600;
-`,tr=class extends _.Component{render(){return(0,F.jsx)(er,{children:`Contacts`})}},nr=class extends _.Component{render(){let{filter:e,onFilterChange:t}=this.props;return(0,F.jsxs)(`div`,{children:[(0,F.jsx)(`label`,{htmlFor:`filter`,children:`Find contacts by name`}),(0,F.jsx)(`input`,{id:`filter`,type:`text`,name:`filter`,value:e,onChange:t})]})}},rr=Un.ul`
+`,rr=class extends _.Component{render(){return(0,F.jsx)(nr,{children:`Contacts`})}},ir=Un.input`
+border-radius: 30px;
+border: none;
+margin-top: 10px;
+padding: 10px;
+`,ar=Un.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`,or=class extends _.Component{render(){let{filter:e,onFilterChange:t}=this.props;return(0,F.jsxs)(ar,{children:[(0,F.jsx)(`label`,{htmlFor:`filter`,children:`Find contacts by name`}),(0,F.jsx)(ir,{id:`filter`,type:`text`,name:`filter`,value:e,onChange:t})]})}},sr=Un.ul`
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
 margin-bottom: 50px;
 gap: 10px;
-`,ir=Un.li`
+`,cr=Un.li`
 display: flex;
 gap: 5px;
-`,ar=class extends _.Component{render(){let{contacts:e,filter:t}=this.props;return(0,F.jsxs)(rr,{children:[`  `,e.filter(({name:e})=>e.toLowerCase().includes(t.toLowerCase())).map(({id:e,name:t,number:n})=>(0,F.jsxs)(ir,{children:[(0,F.jsxs)(`p`,{children:[t,`:`]}),(0,F.jsx)(`p`,{children:n})]},e))]})}},or=class extends _.Component{state={contacts:[],filter:``};handleApp=e=>{this.setState(t=>({contacts:[...t.contacts,e]}))};handleFilter=e=>{let{name:t,value:n}=e.target;this.setState({[t]:n})};render(){return(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(Yn,{}),(0,F.jsx)($n,{onApp:this.handleApp}),(0,F.jsx)(tr,{}),(0,F.jsx)(nr,{filter:this.state.filter,onFilterChange:this.handleFilter}),(0,F.jsx)(ar,{contacts:this.state.contacts,filter:this.state.filter})]})}};(0,v.createRoot)(document.getElementById(`root`)).render((0,F.jsxs)(_.StrictMode,{children:[(0,F.jsx)(Kn,{}),(0,F.jsx)(or,{})]}));
+justify-content: center;
+align-items: center;
+`,lr=Un.button`
+border-radius: 30px;
+border: none;
+padding: 10px;
+background-color: black;
+
+&:hover{
+    background-color: white;
+    color: black;
+    transition: 100ms;
+}
+`,ur=class extends _.Component{render(){let{contacts:e,filter:t,onDelete:n}=this.props;return(0,F.jsxs)(sr,{children:[`  `,e.filter(({name:e})=>e.toLowerCase().includes(t.toLowerCase())).map(({id:e,name:t,number:r})=>(0,F.jsxs)(cr,{children:[(0,F.jsxs)(`p`,{children:[t,`:`]}),(0,F.jsx)(`p`,{children:r}),(0,F.jsx)(lr,{type:`button`,onClick:()=>n(e),children:`Delete`})]},e))]})}},dr=class extends _.Component{state={contacts:[],filter:``};handleDelete=e=>{this.setState(t=>({contacts:t.contacts.filter(t=>t.id!==e)}))};handleApp=e=>{this.handleMistake(e.name)||this.setState(t=>({contacts:[...t.contacts,e]}))};handleFilter=e=>{let{name:t,value:n}=e.target;this.setState({[t]:n})};handleMistake=e=>{let{contacts:t}=this.state;return t.some(t=>t.name.toLowerCase()===e.toLowerCase())?(alert(`Mistake: This contact already exists!`),!0):!1};render(){return(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(Yn,{}),(0,F.jsx)(tr,{onApp:this.handleApp}),(0,F.jsx)(rr,{}),(0,F.jsx)(or,{filter:this.state.filter,onFilterChange:this.handleFilter}),(0,F.jsx)(ur,{contacts:this.state.contacts,filter:this.state.filter,onDelete:this.handleDelete})]})}};(0,v.createRoot)(document.getElementById(`root`)).render((0,F.jsxs)(_.StrictMode,{children:[(0,F.jsx)(Kn,{}),(0,F.jsx)(dr,{})]}));
