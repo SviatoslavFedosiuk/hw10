@@ -62,7 +62,7 @@ font-weight: 600;
 border-radius: 30px;
 border: none;
 margin-top: 10px;
-padding: 10px;
+padding: 11px;
 `,ar=Un.div`
 display: flex;
 flex-direction: column;
