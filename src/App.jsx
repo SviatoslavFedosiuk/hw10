@@ -11,7 +11,29 @@ class App extends Component {
     contacts: [],
     filter: "",
   };
-  
+  componentDidMount(){
+    const saveData = window.localStorage.getItem("cards")
+
+    if(saveData){
+      this.setState({
+        contacts: JSON.parse(saveData)
+      })
+    }else{
+      this.setState({
+        contacts: this.state.contacts
+      })
+    }
+    console.log("DidMount");
+    
+  }
+
+  componentDidUpdate(_, prevState){
+    if(prevState.contacts.length !== this.state.contacts.length){
+      window.localStorage.setItem("cards", JSON.stringify(this.state.contacts))
+    }
+    console.log("DidUpdate");
+    
+  }
   handleDelete = (id) => {
     this.setState((prev) => ({
       contacts: prev.contacts.filter((todo) => todo.id !== id),
